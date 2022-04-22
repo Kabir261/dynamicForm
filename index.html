@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <label for="Name">Name</label>
+        <input type="text" name="name" id="name">
+
+        <label for="vehicle-name">Vehicle Name</label>
+        <input type="text" name="vehicle-name" id="vehicle-name">
+
+        <label for="vehicle-number">Vehicle Number</label>
+        <input type="text" name="vehicle-number" id="vehicle-number">
+
+        <label for="entry-date">Entry Date</label>
+        <input type="date" name="entry-date" id="entry-date">
+
+        <label for="exit-date">Exit Date</label>
+        <input type="date" name="exit-date" id="exit-date">
+
+        <input type="button" id="button" value="Enter" onclick="AddData()">
+    </div>
+
+    <table id="show-data">
+        <tr>
+            <th>Name</th>
+            <th>Vehicle Name</th>
+            <th>Vehicle Number</th>
+            <th>Entry Date</th>
+            <th>Exit Date</th>
+        </tr>
+    </table>
+
+
+    <script>
+        var item1 = [];
+        var item2 = [];
+        var item3 = [];
+        var item4 = [];
+        var item5 = [];
+
+        var n=1;
+        var x=0;
+
+        function AddData() {
+            var AddDatan = document.getElementById('show-data');
+            var NewData = AddDatan.insertRow(n);
+
+            item1[x] = document.getElementById("name").value;
+            item2[x] = document.getElementById("vehicle-name").value;
+            item3[x] = document.getElementById("vehicle-number").value;
+            item4[x] = document.getElementById("entry-date").value;
+            item5[x] = document.getElementById("exit-date").value;
+
+            var Cell1 = NewData.insertCell(0);
+            var Cell2 = NewData.insertCell(1);
+            var Cell3 = NewData.insertCell(2);
+            var Cell4 = NewData.insertCell(3);
+            var Cell5 = NewData.insertCell(4);
+
+            Cell1.innerHTML = item1[x];
+            Cell2.innerHTML = item2[x];
+            Cell3.innerHTML = item3[x];
+            Cell4.innerHTML = item4[x];
+            Cell5.innerHTML = item5[x];
+
+            n++;
+            x++;
+
+            var k = document.getElementById("name");
+        }
+    </script>
+</body>
+</html>
